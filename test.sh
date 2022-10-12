@@ -1,2 +1,2 @@
 echo "hallo welt"
-exit 1
+exit 0
