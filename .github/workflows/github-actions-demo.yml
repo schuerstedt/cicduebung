@@ -18,4 +18,8 @@ jobs:
       - run: echo "🍏 This job's status is ${{ job.status }}."
       - run: sh ${{ github.workspace }}/test.sh
       - run: docker run hello-world
+      - run: echo ${{ secrets.MEINGEHEIMNIS}}
+      - run: global meinevar=${{ secrets.MEINGEHEINIS}}
+      - run: echo $meinevar
+
       
