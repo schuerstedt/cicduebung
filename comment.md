@@ -3,6 +3,11 @@ http://devops.edunmore.de:8082/assets/app.zip
 
 
 # GitHub Repo (wiord beim Manuellen nicht gebraucht)
+Source code
+http://devops.edunmore.de:8082/assets/app.zip
+
+
+GitHub Repo (wiord beim Manuellen nicht gebraucht)
 
 Source code laden
 wget http://devops.edunmore.de:8082/assets/app.zip
@@ -50,4 +55,7 @@ docker ps |grep cicd
 # image über godeploy in Azure über das Portal als Webapp starten
 
 # image über godeploy in Azure über die Azure CLI starten (az ...)
+Entpacken mit mc (midnight commander) # apt install mc
+
+
 
