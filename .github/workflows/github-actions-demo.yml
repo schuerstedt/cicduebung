@@ -19,7 +19,9 @@ jobs:
       - run: sh ${{ github.workspace }}/test.sh
       - run: docker run hello-world
       - run: echo ${{ secrets.MEINGEHEIMNIS}}
-      - run: export meinevar=${{ secrets.MEINGEHEIMNIS}}
-      - run: echo $meinevar
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/test.sh # or path/to/artifact
 
       
