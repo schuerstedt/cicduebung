@@ -16,3 +16,12 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{ job.status }}."
+      - run: sh ${{ github.workspace }}/test.sh
+      - run: docker run hello-world
+      - run: echo ${{ secrets.MEINGEHEIMNIS}}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: my-artifact
+          path: ${{ github.workspace }}/test.sh # or path/to/artifact
+
+      
