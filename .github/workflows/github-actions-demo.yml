@@ -19,7 +19,7 @@ jobs:
       - run: sh ${{ github.workspace }}/test.sh
       - run: docker run hello-world
       - run: echo ${{ secrets.MEINGEHEIMNIS}}
-      - run: global meinevar=${{ secrets.MEINGEHEINIS}}
+      - run: export meinevar=${{ secrets.MEINGEHEINIS}}
       - run: echo $meinevar
 
       
