@@ -1,11 +1,25 @@
 on: [push]
 
-name: Linux_Container_Node_Workflow
+name: Azure Deployment
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+    # dumping vars for testing
+    - name: Dump GitHub context
+      id: github_context_step
+      run: echo '${{ toJSON(github) }}'
+    - name: Dump job context
+      run: echo '${{ toJSON(job) }}'
+    - name: Dump steps context
+      run: echo '${{ toJSON(steps) }}'
+    - name: Dump runner context
+      run: echo '${{ toJSON(runner) }}'
+    - name: Dump strategy context
+      run: echo '${{ toJSON(strategy) }}'
+    - name: Dump matrix context
+      run: echo '${{ toJSON(matrix) }}'
     # checkout the repo
     - name: 'Checkout Github Action'
       uses: actions/checkout@v3
