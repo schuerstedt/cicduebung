@@ -5,21 +5,6 @@ name: Azure Deployment
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-    # dumping vars for testing
-    - name: Dump GitHub context
-      id: github_context_step
-      run: echo '${{ toJSON(github) }}'
-    - name: Dump job context
-      run: echo '${{ toJSON(job) }}'
-    - name: Dump steps context
-      run: echo '${{ toJSON(steps) }}'
-    - name: Dump runner context
-      run: echo '${{ toJSON(runner) }}'
-    - name: Dump strategy context
-      run: echo '${{ toJSON(strategy) }}'
-    - name: Dump matrix context
-      run: echo '${{ toJSON(matrix) }}'
     # checkout the repo
     - name: 'Checkout Github Action'
       uses: actions/checkout@v3
@@ -41,10 +26,10 @@ jobs:
       with:
         context: "{{defaultContext}}:app"
         push: true
-        tags: schuerstedt/azuregithubdemo:${{ github.sha }}
+        tags: schuerstedt/azuregithubdemo:${{ github.run_number }}/${{ github.run_attempt }}
 
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'devops131022'
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        images: 'schuerstedt/azuregithubdemo:${{ github.sha }}'
+        images: 'schuerstedt/azuregithubdemo:${{ github.run_number }}/${{ github.run_attempt }}'
