@@ -27,10 +27,10 @@ jobs:
       with:
         context: "{{defaultContext}}:app"
         push: true
-        tags: schuerstedt/azuregithubdemo:${{ github.run_number }}/${{ github.run_attempt }}
+        tags: schuerstedt/azuregithubdemo:${{ github.run_number }}_${{ github.run_attempt }}
 
     - uses: azure/webapps-deploy@v2
       with:
         app-name: 'devops131022'
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
-        images: 'schuerstedt/azuregithubdemo:${{ github.run_number }}/${{ github.run_attempt }}'
+        images: 'schuerstedt/azuregithubdemo:${{ github.run_number }}_${{ github.run_attempt }}'
