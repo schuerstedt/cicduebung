@@ -5,6 +5,7 @@ name: Azure Deployment
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    steps:
     # checkout the repo
     - name: 'Checkout Github Action'
       uses: actions/checkout@v3
