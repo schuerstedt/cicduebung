@@ -37,7 +37,7 @@ jobs:
     - uses: azure/webapps-deploy@v2
       with:
         # braucht den Appnamen aus Azure
-        app-name: 'devops131022'
+        app-name: 'devops141022'
         # und das passende PublishProfile XML als Secret
         publish-profile: ${{ secrets.azureWebAppPublishProfile }}
         # die Quelle des Docker Containers
